@@ -815,7 +815,7 @@ class Blade(object):
             raise RuntimeError('Unsuccessful assembling of solid blade')
         result_solid = solid_maker.Solid()
 
-       	return result_solid
+        return result_solid
 
     def export_stl(self, filename, linear_deflection=0.1):
         """
