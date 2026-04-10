@@ -817,7 +817,7 @@ class Blade(object):
 
         return result_solid
 
-    def export_stl(self, filename, linear_deflection=0.1):
+    def export_stl(self, filename, linear_deflection=1e-3):
         """
         Generate and export the .STL file for the entire blade.
         This method requires PythonOCC (7.4.0) to be installed.
@@ -827,7 +827,7 @@ class Blade(object):
         from OCC.Extend.DataExchange import write_stl_file
         from OCC.Core.StlAPI import StlAPI_Writer
 
-        sewer = BRepBuilderAPI_Sewing(1e-2)
+        sewer = BRepBuilderAPI_Sewing(1e-7)
         sewer.Add(self.upper_face)
         sewer.Add(self.lower_face)
         sewer.Add(self.root_face)

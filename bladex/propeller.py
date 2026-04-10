@@ -59,7 +59,7 @@ class Propeller(object):
         shapes = []
         for blade_ in self.blades:
 
-            sewer = BRepBuilderAPI_Sewing(1e-2)
+            sewer = BRepBuilderAPI_Sewing(1e-6)
             sewer.Add(blade_.upper_face)
             sewer.Add(blade_.lower_face)
             sewer.Add(blade_.root_face)
@@ -83,7 +83,7 @@ class Propeller(object):
         
         solid = self.solid
 
-        sewer = BRepBuilderAPI_Sewing(1e-2)
+        sewer = BRepBuilderAPI_Sewing(1e-6)
         sewer.Add(solid)
         sewer.Perform()
         
